@@ -10,7 +10,9 @@ export default function IndexPage() {
 
   return (
     <div>
-      <p>{hello.data.greeting}</p>
+      <h1 className='text-3xl font-bold underline'>
+        Hello {hello.data.greeting}
+      </h1>
     </div>
   );
 }

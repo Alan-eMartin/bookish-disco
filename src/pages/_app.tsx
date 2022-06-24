@@ -4,6 +4,8 @@ import { AppType } from 'next/dist/shared/lib/utils';
 import superjson from 'superjson';
 import { AppRouter } from '@/server/router';
 
+import '@/styles/globals.scss';
+
 const MyApp: AppType = ({ Component, pageProps }) => (
   <Component {...pageProps} />
 );
