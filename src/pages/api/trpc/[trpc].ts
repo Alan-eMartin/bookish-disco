@@ -5,7 +5,7 @@ import { appRouter, AppRouter } from '@/server/router';
 // export API handler
 export default trpcNext.createNextApiHandler({
   router: appRouter,
-  createContext: () => null,
+  createContext: async () => null,
 });
 
 export type InferQueryResponse<
