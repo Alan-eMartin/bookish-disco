@@ -1,31 +1,16 @@
-import axios from 'axios';
-import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { trpc } from '../utils/trpc';
 
-export default function Home() {
-  // State
-  const [message, setMessage] = useState('');
+export default function IndexPage() {
+  const hello = trpc.useQuery(['hello.name', { name: '' }]);
+  if (!hello.data) {
+    return <div>Loading...</div>;
+  }
 
-  // Fetch
-  const fetchData = async () => {
-    const { data } = await axios.get('/api/hello');
-
-    setMessage(data.message);
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  console.log(hello.data.greeting);
 
   return (
     <div>
-      <Head>
-        <title>Next Starter</title>
-      </Head>
-      <h1>Welcome to my Next TS Starter</h1>
-
-      <p>Message from API</p>
-      <p>{message ?? message}</p>
+      <p>{hello.data.greeting}</p>
     </div>
   );
 }

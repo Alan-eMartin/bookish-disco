@@ -40,6 +40,8 @@ module.exports = {
     'brace-style': 'off',
     'arrow-parens': [2, 'as-needed'],
     'function-call-argument-newline': 0,
+    'import/prefer-default-export': 0,
+    'import/extensions': 0,
     'function-paren-newline': 0,
     'jsx-quotes': [2, 'prefer-single'],
     'no-cond-assign': [2, 'except-parens'],
